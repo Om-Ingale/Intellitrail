@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── PURE BLACK professional palette ─── */
+:root {
+  --tv-bg:      #000000;    /* pure black */
+  --tv-bg2:     #0a0a0a;    /* panels */
+  --tv-bg3:     #141414;    /* hover/active */
+  --tv-border:  #2a2f3a;    /* clearer borders */
+  --tv-text:    #d1d4dc;    /* primary text */
+  --tv-text2:   #9aa4b2;    /* secondary (brighter) */
+  --tv-text3:   #727c8f;    /* muted (more readable) */
+  --tv-up:      #089981;    /* TradingView teal */
+  --tv-down:    #F23645;    /* TradingView red */
+  --tv-blue:    #2962ff;    /* accent */
+}
+
+:root.light {
+  --tv-bg:      #ffffff;    /* pure white */
+  --tv-bg2:     #f4f5f8;    /* panels */
+  --tv-bg3:     #e5e7eb;    /* hover/active */
+  --tv-border:  #d1d5db;    /* subtle borders */
+  --tv-text:    #111827;    /* primary text */
+  --tv-text2:   #4b5563;    /* secondary */
+  --tv-text3:   #9ca3af;    /* muted */
+  --tv-up:      #089981;    /* TradingView teal */
+  --tv-down:    #F23645;    /* TradingView red */
+  --tv-blue:    #2962ff;    /* accent */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.dashboard-caps,
+.dashboard-caps * {
+  text-transform: uppercase !important;
+}
+
+.dashboard-caps *::placeholder {
+  text-transform: uppercase !important;
+}
+
+.dashboard-caps .no-caps,
+.dashboard-caps .no-caps * {
+  text-transform: none !important;
+}
+
+.dashboard-caps .no-caps::placeholder,
+.dashboard-caps .no-caps *::placeholder {
+  text-transform: none !important;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Trebuchet MS', Roboto, Ubuntu, sans-serif;
+  background: var(--tv-bg);
+  color: var(--tv-text);
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+::-webkit-scrollbar { width: 3px; height: 3px; }
+::-webkit-scrollbar-track { background: var(--tv-bg); }
+::-webkit-scrollbar-thumb { background: var(--tv-border); border-radius: 2px; }
+
+input, select, button { font-family: inherit; font-size: 12px; transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
+input  { background: var(--tv-bg); color: var(--tv-text); border: 1px solid var(--tv-border); outline: none; }
+select { background: var(--tv-bg); color: var(--tv-text); border: 1px solid var(--tv-border); outline: none; }
+input[type=range] { accent-color: var(--tv-text3); }
+
+.tv-up   { color: var(--tv-up);   }
+.tv-down { color: var(--tv-down); }
+
+/* Hide TradingView logo watermark from lightweight-charts */
+a[href*="tradingview"] { display: none !important; }
+
